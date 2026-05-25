@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        .field { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Регистрация</h1>
+        <form id="reg-form">
+            <div class="field">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" id="submit-btn">Зарегистрироваться</button>
+        </form>
+        <p id="success-msg" style="display:none; color: green;">Готово!</p>
+    </div>
+
+    <script>
+        document.getElementById('reg-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('success-msg').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
